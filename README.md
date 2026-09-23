@@ -1,6 +1,6 @@
-Aegis | Site Inspector
+Aegis | Web Inspector
 
-Nexus is a full-stack Python web application engineered for real-time domain inspection, security header compliance auditing, technology stack fingerprinting, and client-side network telemetry. Built with Streamlit, Requests, and BeautifulSoup, the application evaluates target web architecture against modern security standards and OWASP recommendations.
+Aegis is a full-stack Python web application engineered for real-time domain inspection, security header compliance auditing, technology stack fingerprinting, and client-side network telemetry. Built with Streamlit, Requests, and BeautifulSoup, the application evaluates target web architecture against modern security standards and OWASP recommendations.
 Key Features
 🌐 Dynamic Target Fingerprinting & Hero Telemetry
 
