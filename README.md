@@ -1,4 +1,4 @@
-Nexus | Web Intelligence & Security Engine
+Aegis | Site Inspector
 
 Nexus is a full-stack Python web application engineered for real-time domain inspection, security header compliance auditing, technology stack fingerprinting, and client-side network telemetry. Built with Streamlit, Requests, and BeautifulSoup, the application evaluates target web architecture against modern security standards and OWASP recommendations.
 Key Features
@@ -59,3 +59,68 @@ Tech Stack & Dependencies
     HTTP Client & Parsing: Requests, BeautifulSoup4
 
     Domain & Network Intelligence: python-whois, socket, ssl
+
+Installation & Setup
+
+    Clone the Repository
+    Bash
+
+    git clone https://github.com/your-username/aegis-web-inspector.git
+    cd aegis-web-inspector
+
+    Install Required Packages
+    Bash
+
+    pip install streamlit requests beautifulsoup4 python-whois
+
+    Run the Application
+    Bash
+
+    python -m streamlit run app.py
+
+Repository Structure
+
+├── app.py              # Main Streamlit application containing UI, custom CSS, and audit modules
+├── README.md           # Technical documentation
+└── requirements.txt    # Project dependencies
+
+Output Data Structure
+
+Exported JSON reports follow this standardized schema:
+JSON
+
+{
+  "target": "https://example.com",
+  "timestamp": "2026-09-23 22:31:00",
+  "status_code": 200,
+  "latency_ms": 142,
+  "domain_whois": {
+    "created": "August 14, 1995",
+    "age": "31 years",
+    "registrar": "RESERVED-Internet Assigned Numbers Authority"
+  },
+  "ssl_security": {
+    "status": "Valid",
+    "issuer": "DigiCert Inc",
+    "expires": "October 20, 2026",
+    "days_left": 27
+  },
+  "security_headers": {
+    "score": 66,
+    "present": {
+      "Strict-Transport-Security": "max-age=31536000",
+      "X-Frame-Options": "DENY"
+    },
+    "missing": {
+      "Content-Security-Policy": "CSP Enforced"
+    }
+  },
+  "tech_stack": ["Cloudflare CDN", "Nginx Server"],
+  "trackers_found": [],
+  "link_topology": {
+    "total": 12,
+    "internal": 10,
+    "external": 2,
+    "unsafe_external": 0
+  }
+}
